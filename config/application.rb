@@ -28,5 +28,9 @@ module SampleApp
     # config.i18n.default_locale = :de
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    # net‚ÅŒ©‚Ä’Ç‰Á‚µ‚½‚ª‘Ê–Ú2015/10/30
+    #config.autoload_paths += %W(#{config.root}/lib)
+
   end
 end

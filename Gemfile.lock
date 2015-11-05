@@ -31,7 +31,7 @@ GEM
     bcrypt (3.1.10-x86-mingw32)
     bcrypt-ruby (3.1.5-x86-mingw32)
       bcrypt (>= 3.1.3)
-    bootstrap-sass (2.3.2.0)
+    bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
     builder (3.2.2)
     capybara (2.1.0)
@@ -40,7 +40,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    childprocess (0.5.6)
+    childprocess (0.5.7)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -70,7 +70,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.1)
+    minitest (5.8.2)
     multi_json (1.11.2)
     nokogiri (1.6.6.2-x86-mingw32)
       mini_portile (~> 0.6.0)
@@ -144,7 +144,7 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2015.6)
+    tzinfo-data (1.2015.7)
       tzinfo (>= 1.0.0)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
@@ -158,7 +158,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
-  bootstrap-sass (= 2.3.2.0)
+  bootstrap-sass (= 3.2.0.0)
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.1)
   coffee-script-source (= 1.8.0)
