@@ -10,12 +10,19 @@ gem 'sprockets', '2.11.0'
 #gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'bcrypt-ruby'
 
+#2015/11/09 add
+gem 'faker', '1.1.2'
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+#2015/11/09 add END
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.10'
-  gem 'rspec-rails', '2.13.1'
+  #gem 'rspec-rails', '2.13.1'
+  gem 'rspec-rails', '~> 2.14.0.rc1'
   gem 'minitest'
 end
 
