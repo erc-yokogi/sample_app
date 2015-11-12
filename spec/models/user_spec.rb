@@ -20,6 +20,10 @@ describe User do
   it { should respond_to(:admin) }
 #2015/11/09 add END
 
+#2015/11/11 add
+  it { should respond_to(:microposts) }
+#2015/11/11 add END
+
   it { should be_valid }
 
 #2015/11/09 add
@@ -139,4 +143,43 @@ describe User do
   end
 
 
+#2015/11/11 add
+  describe "micropost associations" do
+
+    before { @user.save }
+    let!(:older_micropost) do
+      FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_micropost) do
+      FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right microposts in the right order" do
+      expect(@user.microposts.to_a).to eq [newer_micropost, older_micropost]
+    end
+
+    it "should destroy associated microposts" do
+      microposts = @user.microposts.to_a
+      @user.destroy
+      expect(microposts).not_to be_empty
+      microposts.each do |micropost|
+        expect(Micropost.where(id: micropost.id)).to be_empty
+      end
+    end
+
+#2015/11/12 add
+    describe "status" do
+      let(:unfollowed_post) do
+        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+      end
+
+      its(:feed) { should include(newer_micropost) }
+      its(:feed) { should include(older_micropost) }
+      its(:feed) { should_not include(unfollowed_post) }
+    end
+#2015/11/12 add END
+
+  end
+
+#2015/11/11 add END
 end

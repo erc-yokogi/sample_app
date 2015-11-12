@@ -15,6 +15,11 @@ class UsersController < ApplicationController
 
   def show
    @user = User.find(params[:id])
+
+#2015/11/11 add
+   @microposts = @user.microposts.paginate(page: params[:page])
+#2015/11/11 add END
+
   end
 
 
@@ -67,12 +72,14 @@ class UsersController < ApplicationController
 #2015/11/06 add
     # Before actions
 
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in." 
-      end
-    end
+#2015/11/11 SessionsHelper ‚ÉˆÚ“®
+#    def signed_in_user
+#      unless signed_in?
+#        store_location
+#        redirect_to signin_url, notice: "Please sign in." 
+#      end
+#    end
+#2015/11/11 END
 
     def correct_user
       @user = User.find(params[:id])

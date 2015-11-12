@@ -15,4 +15,12 @@ FactoryGirl.define do
     end
 
   end
+
+#2015/11/11 add
+  factory :micropost do
+    content "Lorem ipsum"
+    user
+  end
+#2015/11/11 add END
+
 end

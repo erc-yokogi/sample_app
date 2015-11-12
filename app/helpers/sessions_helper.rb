@@ -26,6 +26,15 @@ module SessionsHelper
   end
 #2015/11/06 add END
 
+#2015/11/11 add Userscontroller‚©‚çˆÚ“®
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to signin_url, notice: "Please sign in."
+    end
+  end
+#2015/11/11 add END
+
   def sign_out
    self.current_user = nil
    cookies.delete(:remember_token)
