@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 #2015/11/06 add 11/09 change
-  before_action :signed_in_user, only: [:index, :edit, :update]
+  before_action :signed_in_user, only: [:index, :edit, :update, :following, :followers]
   before_action :correct_user,   only: [:edit, :update]
 #2015/11/06 add END
 
@@ -61,6 +61,22 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 #2015/11/09 add END
+
+#2015/11/13 add
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+#2015/11/13 add END
 
   private
 

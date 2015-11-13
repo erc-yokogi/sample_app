@@ -16,6 +16,12 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+
+#2015/11/13 add
+  it { should respond_to(:feed) }
+  it { should respond_to(:relationships) }
+#2015/11/13 add END
+
 #2015/11/09 add
   it { should respond_to(:admin) }
 #2015/11/09 add END
